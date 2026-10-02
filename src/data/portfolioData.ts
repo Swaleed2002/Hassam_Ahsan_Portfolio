@@ -116,7 +116,7 @@ export const personalInfo: PersonalInfo = {
   emailUrl: "mailto:hassamahsanofficial@gmail.com",
   linkedin: "linkedin.com/in/hassam-ahsan/",
   linkedinUrl: "https://www.linkedin.com/in/hassam-ahsan/",
-  resumeUrl: `${import.meta.env.BASE_URL}Hassam_Ahsan_Resume.pdf`,
+  resumeUrl: `${import.meta.env.BASE_URL}Hassam_Ahsan_Resume.pdf?v=d1865e47`,
   scheduleMeetingUrl: "mailto:hassamahsanofficial@gmail.com?subject=Meeting%20Schedule%20Request%20-%20Hassam%20Ahsan"
 };
 
