@@ -12,7 +12,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { personalInfo, SCHEDULE_MEETING_URL } from '../data/portfolioData';
-import hassamPhoto from '../assets/hassam-ahsan-profile.jpg';
+import hassamPhoto from '../assets/hassam-profile';
 
 interface HeroProps {
   onOpenResumeModal?: () => void;
