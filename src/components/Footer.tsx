@@ -19,21 +19,21 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#05070C] border-t border-white/[0.08] pt-16 pb-12 text-slate-400">
+    <footer className="bg-white border-t border-slate-200/90 pt-16 pb-12 text-slate-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-10 border-b border-white/[0.08] gap-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-10 border-b border-slate-200 gap-6">
           <div className="space-y-1.5">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-[#E2C38A]/10 border border-[#E2C38A]/30 flex items-center justify-center font-bold text-[#E2C38A] text-sm">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-100 via-amber-50 to-amber-200 border border-amber-300 flex items-center justify-center font-bold text-amber-800 text-sm shadow-xs">
                 HA
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
+              <span className="text-xl font-extrabold text-slate-900 tracking-tight">
                 {personalInfo.name}
               </span>
             </div>
-            <p className="text-xs text-slate-400 font-medium">
+            <p className="text-xs text-slate-500 font-medium">
               Marketing • Business Development • Brand & Experiential Marketing
             </p>
           </div>
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-white/[0.03] hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 border border-white/[0.08] transition-colors"
+              className="p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 transition-colors shadow-xs"
               title="WhatsApp"
             >
               <MessageSquare className="w-4 h-4" />
@@ -52,16 +52,16 @@ export const Footer: React.FC = () => {
 
             <a
               href={personalInfo.phoneUrl}
-              className="p-2.5 rounded-xl bg-white/[0.03] hover:bg-blue-500/20 text-slate-400 hover:text-blue-300 border border-white/[0.08] transition-colors"
-              title="Call"
+              className="p-2.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-700 border border-slate-200 transition-colors shadow-xs"
+              title="Phone"
             >
               <Phone className="w-4 h-4" />
             </a>
 
             <a
               href={personalInfo.emailUrl}
-              className="p-2.5 rounded-xl bg-white/[0.03] hover:bg-[#E2C38A]/20 text-slate-400 hover:text-[#E2C38A] border border-white/[0.08] transition-colors"
-              title="Email"
+              className="p-2.5 rounded-xl bg-slate-50 hover:bg-amber-50 text-slate-600 hover:text-amber-800 border border-slate-200 transition-colors shadow-xs"
+              title="Gmail"
             >
               <Mail className="w-4 h-4" />
             </a>
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-white/[0.03] hover:bg-sky-500/20 text-slate-400 hover:text-sky-400 border border-white/[0.08] transition-colors"
+              className="p-2.5 rounded-xl bg-slate-50 hover:bg-sky-50 text-slate-600 hover:text-sky-700 border border-slate-200 transition-colors shadow-xs"
               title="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
 
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-xl bg-white/[0.06] hover:bg-[#E2C38A] hover:text-slate-950 text-slate-300 border border-white/[0.1] transition-all ml-2"
+              className="p-2.5 rounded-xl bg-slate-100 hover:bg-amber-400 hover:text-slate-950 text-slate-700 border border-slate-200 transition-all ml-2 cursor-pointer shadow-xs"
               title="Return to top"
             >
               <ArrowUp className="w-4 h-4" />
@@ -90,15 +90,15 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© 2026 {personalInfo.name}. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-slate-400">
-              <MapPin className="w-3.5 h-3.5 text-[#E2C38A]" />
+            <span className="flex items-center gap-1.5 text-slate-600">
+              <MapPin className="w-3.5 h-3.5 text-amber-600" />
               <span>International City, Dubai, UAE</span>
             </span>
-            <span>•</span>
+            <span className="text-slate-300">•</span>
             <a
               href={personalInfo.resumeUrl}
               download="Hassam_Ahsan_Resume.pdf"
-              className="text-[#E2C38A] hover:text-[#FFF0D4] underline underline-offset-4"
+              className="text-amber-700 hover:text-amber-800 font-semibold underline underline-offset-4"
             >
               Download CV (PDF)
             </a>

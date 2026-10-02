@@ -16,7 +16,7 @@ export default function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen bg-[#070A11] text-slate-100 flex flex-col selection:bg-[#E2C38A]/30 selection:text-[#FFF0D4] overflow-x-hidden">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-amber-100 selection:text-amber-900 overflow-x-hidden">
       {/* Sticky Modern Navigation */}
       <Navbar onOpenResumeModal={() => setIsResumeModalOpen(true)} />
 

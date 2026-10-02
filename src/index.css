@@ -3,61 +3,64 @@
 @layer base {
   html {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color-scheme: dark;
+    color-scheme: light;
+    background-color: #F8FAFC;
+    color: #0F172A;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Modern Light Theme */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #070a11;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #CBD5E1;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94A3B8;
 }
 
-/* Luxury Executive Architectural Gradients & Accents */
+/* Luxury Executive Architectural Gradients & Accents - Light Theme */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #FFF0D4 0%, #DDB872 45%, #B38634 100%);
+  background: linear-gradient(135deg, #78350F 0%, #B45309 45%, #D97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .silver-gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 60%, #94A3B8 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 60%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .platinum-glow {
-  box-shadow: 0 0 50px -10px rgba(221, 184, 114, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(180, 83, 9, 0.12);
 }
 
 .executive-border {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: #E2E8F0;
 }
 
 .executive-border-hover:hover {
-  border-color: rgba(221, 184, 114, 0.35);
+  border-color: #CBD5E1;
 }
 
-/* Subtle architectural mesh grid */
+/* Subtle architectural mesh grid - Light Theme */
 .bg-executive-mesh {
+  background-color: #F8FAFC;
   background-image: 
-    radial-gradient(circle at 100% 0%, rgba(221, 184, 114, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 0% 50%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    radial-gradient(circle at 100% 0%, rgba(217, 119, 6, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 0% 50%, rgba(30, 58, 138, 0.04) 0%, transparent 50%),
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 

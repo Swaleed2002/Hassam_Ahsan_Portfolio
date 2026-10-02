@@ -16,6 +16,7 @@ export interface PersonalInfo {
   linkedin: string;
   linkedinUrl: string;
   resumeUrl: string;
+  scheduleMeetingUrl?: string;
 }
 
 export interface MetricItem {
@@ -115,8 +116,12 @@ export const personalInfo: PersonalInfo = {
   emailUrl: "mailto:hassamahsanofficial@gmail.com",
   linkedin: "linkedin.com/in/hassam-ahsan/",
   linkedinUrl: "https://www.linkedin.com/in/hassam-ahsan/",
-  resumeUrl: "/Hassam_Ahsan_Resume.pdf"
+  resumeUrl: "/Hassam_Ahsan_Resume.pdf",
+  scheduleMeetingUrl: "mailto:hassamahsanofficial@gmail.com?subject=Meeting%20Schedule%20Request%20-%20Hassam%20Ahsan"
 };
+
+// Configurable booking / meeting scheduling URL (e.g., Calendly, Google Calendar, or direct inquiry)
+export const SCHEDULE_MEETING_URL = "mailto:hassamahsanofficial@gmail.com?subject=Meeting%20Schedule%20Request%20-%20Hassam%20Ahsan";
 
 export const executiveHighlights = [
   "Average +21% annual revenue performance against assigned targets",

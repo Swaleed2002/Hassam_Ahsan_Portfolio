@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#070A11]/85 backdrop-blur-xl border-b border-white/[0.07] shadow-2xl py-3.5'
+            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/90 shadow-sm py-3.5'
             : 'bg-transparent py-5'
         }`}
       >
@@ -87,21 +87,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               onClick={(e) => handleNavClick(e, '#home')}
               className="flex items-center gap-3.5 group focus:outline-none"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#DDB872]/20 via-[#B38634]/10 to-transparent border border-[#DDB872]/40 flex items-center justify-center font-bold text-[#E2C38A] group-hover:border-[#E2C38A] transition-all shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-100 via-amber-50 to-amber-200 border border-amber-300/80 flex items-center justify-center font-bold text-amber-800 group-hover:border-amber-500 transition-all shadow-sm">
                 HA
               </div>
               <div className="text-left">
-                <span className="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-[#E2C38A] transition-colors block">
+                <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 group-hover:text-amber-700 transition-colors block">
                   {personalInfo.name}
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-slate-400 block -mt-0.5">
+                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-slate-500 block -mt-0.5">
                   Dubai, UAE • Portfolio
                 </span>
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden xl:flex items-center space-x-1 bg-white/[0.03] p-1 rounded-full border border-white/[0.08] backdrop-blur-md">
+            <nav className="hidden xl:flex items-center space-x-1 bg-slate-100/90 p-1.5 rounded-full border border-slate-200 backdrop-blur-md shadow-inner">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -109,10 +109,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
                     key={item.id}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 relative ${
+                    className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 relative ${
                       isActive
-                        ? 'text-slate-950 bg-[#E2C38A] shadow-md shadow-[#DDB872]/20 font-bold'
-                        : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+                        ? 'text-slate-950 bg-white shadow-sm font-bold border border-slate-200/80'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
                     }`}
                   >
                     {item.label}
@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
                 href={personalInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-colors"
+                className="p-2.5 rounded-full text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors shadow-sm"
                 title="WhatsApp Direct"
               >
                 <MessageSquare className="w-4 h-4" />
@@ -136,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               <a
                 href={personalInfo.resumeUrl}
                 download="Hassam_Ahsan_Resume.pdf"
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-[#FFF0D4] via-[#E2C38A] to-[#DDB872] hover:brightness-105 rounded-full shadow-lg shadow-[#DDB872]/25 transition-all duration-200 active:scale-95"
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 rounded-full shadow-md shadow-amber-500/20 transition-all duration-200 active:scale-95"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Download CV</span>
@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               <a
                 href={personalInfo.resumeUrl}
                 download="Hassam_Ahsan_Resume.pdf"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-slate-950 bg-[#E2C38A] rounded-full"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-slate-950 bg-amber-400 rounded-full shadow-sm"
               >
                 <Download className="w-3 h-3" />
                 <span>CV</span>
@@ -156,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
 
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2.5 rounded-xl text-slate-200 hover:text-white bg-white/[0.04] border border-white/[0.1] focus:outline-none"
+                className="p-2.5 rounded-xl text-slate-700 hover:text-slate-950 bg-slate-100 hover:bg-slate-200 border border-slate-200 focus:outline-none transition-colors"
                 aria-label="Open mobile menu"
               >
                 <Menu className="w-5 h-5" />
@@ -167,34 +167,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
         </div>
       </header>
 
-      {/* Modern Slide-In Fullscreen Mobile Navigation */}
+      {/* Modern Slide-In Fullscreen Mobile Navigation - Light Theme */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 xl:hidden flex">
           {/* Backdrop overlay */}
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           {/* Slide-over panel */}
-          <div className="relative ml-auto w-full max-w-sm bg-[#090D17] border-l border-white/[0.1] h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto z-10">
+          <div className="relative ml-auto w-full max-w-sm bg-white border-l border-slate-200 h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto z-10">
             
             {/* Header in drawer */}
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-white/[0.08]">
+              <div className="flex items-center justify-between pb-5 border-b border-slate-200">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#E2C38A]/20 border border-[#E2C38A]/40 flex items-center justify-center font-bold text-[#E2C38A] text-sm">
+                  <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center font-bold text-amber-800 text-sm">
                     HA
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-white">{personalInfo.name}</div>
-                    <div className="text-[10px] font-mono text-slate-400">Dubai, UAE</div>
+                    <div className="text-sm font-bold text-slate-900">{personalInfo.name}</div>
+                    <div className="text-[10px] font-mono text-slate-500">Dubai, UAE</div>
                   </div>
                 </div>
 
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-xl text-slate-400 hover:text-white bg-white/[0.05] border border-white/[0.1]"
+                  className="p-2 rounded-xl text-slate-500 hover:text-slate-900 bg-slate-100 border border-slate-200"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
@@ -212,15 +212,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
                       onClick={(e) => handleNavClick(e, item.href)}
                       className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                         isActive
-                          ? 'bg-[#E2C38A]/15 text-[#E2C38A] font-bold border border-[#E2C38A]/30'
-                          : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                          ? 'bg-amber-50 text-amber-900 font-bold border border-amber-300/80 shadow-sm'
+                          : 'text-slate-700 hover:text-slate-950 hover:bg-slate-50'
                       }`}
                     >
                       <span className="flex items-center gap-3">
-                        <span className="text-[11px] font-mono opacity-50">0{idx + 1}</span>
+                        <span className="text-[11px] font-mono text-slate-400">0{idx + 1}</span>
                         <span>{item.label}</span>
                       </span>
-                      <ChevronRight className="w-4 h-4 opacity-40" />
+                      <ChevronRight className="w-4 h-4 text-slate-400" />
                     </a>
                   );
                 })}
@@ -228,11 +228,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
             </div>
 
             {/* Bottom contact & actions */}
-            <div className="pt-6 border-t border-white/[0.08] space-y-3">
+            <div className="pt-6 border-t border-slate-200 space-y-3">
               <a
                 href={personalInfo.resumeUrl}
                 download="Hassam_Ahsan_Resume.pdf"
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold text-slate-950 bg-gradient-to-r from-[#FFF0D4] via-[#E2C38A] to-[#DDB872] rounded-xl shadow-lg shadow-[#DDB872]/20"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl shadow-md shadow-amber-500/20"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Executive CV (PDF)</span>
@@ -243,17 +243,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
                   href={personalInfo.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 p-2.5 text-xs font-semibold text-emerald-400 bg-emerald-500/10 rounded-xl border border-emerald-500/20"
+                  className="flex items-center justify-center gap-2 p-2.5 text-xs font-semibold text-emerald-800 bg-emerald-50 rounded-xl border border-emerald-200"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>WhatsApp</span>
                 </a>
                 <a
                   href={personalInfo.phoneUrl}
-                  className="flex items-center justify-center gap-2 p-2.5 text-xs font-semibold text-slate-200 bg-white/[0.05] rounded-xl border border-white/[0.08]"
+                  className="flex items-center justify-center gap-2 p-2.5 text-xs font-semibold text-slate-800 bg-slate-100 rounded-xl border border-slate-200"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#E2C38A]" />
-                  <span>Direct Call</span>
+                  <Phone className="w-3.5 h-3.5 text-amber-700" />
+                  <span>Phone</span>
                 </a>
               </div>
             </div>
