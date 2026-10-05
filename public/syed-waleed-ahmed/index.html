@@ -47,7 +47,7 @@ footer{width:min(calc(100% - 40px),var(--max));margin:0 auto;padding:30px 0 42px
       <a href="#experience" class="nav-link">Experience</a>
       <a href="#work" class="nav-link">Technical Work</a>
       <a href="#education" class="nav-link">Education</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="nav-link">Contact Info</a>
     </nav>
   </header>
 
@@ -63,7 +63,7 @@ footer{width:min(calc(100% - 40px),var(--max));margin:0 auto;padding:30px 0 42px
           <button class="btn btn-ghost" data-contact="whatsapp">WhatsApp</button>
         </div>
         <div class="quick-facts" aria-label="Professional focus">
-          <div><strong>6+ Years</strong><span>Hands-on field experience</span></div>
+          <div><strong id="experienceYears" data-start-date="2019-10-01">7+ Years</strong><span>Hands-on field experience</span></div>
           <div><strong>CIJ · TIJ · TTO · Laser</strong><span>Coding & marking technologies</span></div>
           <div><strong>Mechanical + Electronics</strong><span>Cross-discipline diagnostics</span></div>
         </div>
@@ -179,7 +179,7 @@ footer{width:min(calc(100% - 40px),var(--max));margin:0 auto;padding:30px 0 42px
   </main>
 
   <footer>
-    <span>© 2026 Syed Waleed Ahmed. All Rights Reserved.</span>
+    <span>© <span id="currentYear">2026</span> Syed Waleed Ahmed. All Rights Reserved.</span>
     <a href="#top">Back to top ↑</a>
   </footer>
 
@@ -187,6 +187,22 @@ footer{width:min(calc(100% - 40px),var(--max));margin:0 auto;padding:30px 0 42px
   <script>
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
+
+const experienceYearsEl = document.getElementById('experienceYears');
+if (experienceYearsEl) {
+  const startRaw = experienceYearsEl.dataset.startDate || '2019-10-01';
+  const [startYear, startMonth, startDay] = startRaw.split('-').map(Number);
+  const now = new Date();
+  let completedYears = now.getFullYear() - startYear;
+  const anniversaryNotReached =
+    (now.getMonth() + 1 < startMonth) ||
+    (now.getMonth() + 1 === startMonth && now.getDate() < startDay);
+  if (anniversaryNotReached) completedYears -= 1;
+  experienceYearsEl.textContent = `${Math.max(0, completedYears)}+ Years`;
+}
+
+const currentYearEl = document.getElementById('currentYear');
+if (currentYearEl) currentYearEl.textContent = String(new Date().getFullYear());
 menuToggle?.addEventListener('click', () => {
   const open = mainNav.classList.toggle('open');
   menuToggle.setAttribute('aria-expanded', String(open));
